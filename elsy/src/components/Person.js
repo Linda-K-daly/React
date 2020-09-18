@@ -1,22 +1,16 @@
 import React from 'react';
-import "../css/styles.css"
+
 
 
 class Person extends React.Component {
   render() {
     return (
-      
-      <div className="Person">
-        <div className="style" >
-          <div className="box"></div>
-          <div className="container"></div>
-          <div className="row"></div>
-          <div className="col-md-2"></div>
-          <div className="col-6"></div>
-          <span className="material-icons">
-            <link rel="icon" href="arrow_forward_ios" alt="direction_walker" />
+
+      <div className="Person box container row col-6 col-md-2" >
+        <span className="material-icons" style={{ color: "black", fontSize: "100px" }}>
+          directions_walker
           </span>
-        </div>
+
       </div>
     );
   }

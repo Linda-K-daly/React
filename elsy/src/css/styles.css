@@ -1,4 +1,12 @@
-.style { 
-    font-size : 100px;
-    color : black;
-}  
+.box:nth-child(2n) {
+        background-color: #CCC;
+}
+
+.box:nth-child(1n) {
+    background-color: #AAA;
+}
+
+.water {
+    background-color: #3A85FF;
+    font: white;
+}
