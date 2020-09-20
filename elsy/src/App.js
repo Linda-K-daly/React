@@ -1,6 +1,7 @@
 import React from 'react';
 import Person from './components/Person.js'
-import HeartRate from './components/Person.js'
+import HeartRate from './components/HeartRate.js'
+import Icon from './components/core/Icon.js'
 
 const MIN_TEMPERATURE = -20;
 const MAX_TEMPERATURE = 40;
@@ -13,21 +14,18 @@ class App extends React.Component {
   render() {
 
     return (
-      
-      <div className= "App">
-        <div className= "container-fluid"> 
-      
-            {/* <p>Battements_de_coeur : {MIN_HEART}</p>
-            <p>Temperature : {MIN_TEMPERATURE}</p>
-            <p>Nombre_de_pas : {MIN_STEPS}</p>    */}
-            <Person></Person><HeartRate ></HeartRate>
-            <p>const heart : {MIN_HEART}</p>
 
-    </div>
+      <div className="App">
+          <div className="container-fluid">
+          <Person></Person>
+          <Icon></Icon>
+          <HeartRate heart={MIN_HEART} />
+          {/* <HeartRate></HeartRate> */}
+         
 
-      <div>
-        Bonjour!
-      </div>
+          </div>
+         
+      
       </div>
     );
   }
