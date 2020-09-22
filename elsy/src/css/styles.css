@@ -1,8 +1,8 @@
-.box:nth-child(2n) {
-        background-color: #CCC;
+.box:nth-child(even) {
+ background-color: #CCC;
 }
 
-.box:nth-child(1n) {
+.box:nth-child(odd) {
     background-color: #AAA;
 }
 

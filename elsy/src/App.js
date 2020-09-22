@@ -17,9 +17,9 @@ class App extends React.Component {
 
       <div className="App">
           <div className="container-fluid">
-          <Person></Person>
-          <Icon></Icon>
-          <HeartRate heart={MIN_HEART} />
+          <Person/>
+          <Icon/>
+          <HeartRate heart={MIN_HEART}/>
           {/* <HeartRate></HeartRate> */}
          
 

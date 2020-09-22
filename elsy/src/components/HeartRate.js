@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from './core/Icon.js'
 
 
+
 class HeartRate extends React.Component {
     render() {
         return (
