@@ -10,3 +10,10 @@
     background-color: #3A85FF;
     font: white;
 }
+
+.box {
+    height: 190px;
+    padding : 10px;
+    text-align : center
+
+}
