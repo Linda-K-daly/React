@@ -16,7 +16,7 @@ const MAX_STEPS = 50000;
 class App extends React.Component {
   constructor() {
     super();
-
+    this.onHeartChange = this.onHeartChange.bind(this)
   }
   state = {
     water: 0,
@@ -26,8 +26,10 @@ class App extends React.Component {
 
   };
 
-  onHeartChange
-
+  
+  onHeartChange(val) {
+  this.setState.heart ({val = this.state.onChange})
+  }
 
   render() {
 
@@ -38,8 +40,7 @@ class App extends React.Component {
           <Person />
           {this.state.steps}
           <Icon />
-          <HeartRate />
-          {this.state.heart}
+          <HeartRate>{this.state.heart} min = {MIN_HEART} max = {MAX_HEART}</HeartRate>
           <Slider ></Slider>
 
         </div>

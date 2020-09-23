@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './core/Icon.js'
+import Slider from './core/Slider.js';
 
 
 class Person extends React.Component {
@@ -11,7 +12,7 @@ class Person extends React.Component {
       < Icon name = "directions_walk"  color = "black"/>
       <p>{this.props.steps}</p>
 
-      <Slider/>
+      <Slider> </Slider>
       
       </div>
     );

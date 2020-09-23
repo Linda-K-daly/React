@@ -14,7 +14,7 @@ class Slider extends React.Component {
             <RCSlider>
             {this.props.max}
             {this.props.min}
-            {this.props.onChange}
+            {this.state.onChange}
             {this.props.value}
             </RCSlider>
         </div>
