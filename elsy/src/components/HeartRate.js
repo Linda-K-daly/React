@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './core/Icon.js'
-import RCSlider, { Range } from 'rc-slider';
+import Slider from './core/Slider.js'
 
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import Person from './components/Person.js'
 import HeartRate from './components/HeartRate.js'
 import Icon from './components/core/Icon.js'
-
+import Slider from './components/core/Slider.js'
 import './css/bootstrap.min.css'
 import './css/styles.css'
 
@@ -28,7 +28,7 @@ class App extends React.Component {
 
   
   onHeartChange(val) {
-  this.setState.heart ({val = this.state.onChange})
+  this.setState.heart (val = this.state.onChange)
   }
 
   render() {
@@ -37,11 +37,11 @@ class App extends React.Component {
 
       <div className="App">
         <div className="container-fluid">
-          <Person />
+          <Person/>
           {this.state.steps}
           <Icon />
           <HeartRate>{this.state.heart} min = {MIN_HEART} max = {MAX_HEART}</HeartRate>
-          <Slider ></Slider>
+          <Slider></Slider>
 
         </div>
 
