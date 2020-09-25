@@ -3,6 +3,8 @@ import Person from './components/Person.js'
 import HeartRate from './components/HeartRate.js'
 import Icon from './components/core/Icon.js'
 import Slider from './components/core/Slider.js'
+import Temperature from './components/Temperature.js'
+
 import './css/bootstrap.min.css'
 import './css/styles.css'
 
@@ -16,19 +18,21 @@ const MAX_STEPS = 50000;
 class App extends React.Component {
   constructor() {
     super();
-    this.onHeartChange = this.onHeartChange.bind(this)
-  }
-  state = {
+    
+  
+  this.state = { 
     water: 0,
     heart: 120,
     temperature: -10,
     steps: 3000,
-
   };
 
-  
+  this.onHeartChange = this.onHeartChange.bind(this)
+}
+
   onHeartChange(val) {
-  this.setState.heart (val = this.state.onChange)
+    this.setState ({heart : val
+    })
   }
 
   render() {
@@ -40,13 +44,19 @@ class App extends React.Component {
           <Person/>
           {this.state.steps}
           <Icon />
-          <HeartRate>{this.state.heart} min = {MIN_HEART} max = {MAX_HEART}</HeartRate>
-          <Slider></Slider>
+          <HeartRate 
+                      min = {MIN_HEART} 
+                      max = {MAX_HEART}
+                      onChange = {this.onHeartChange}
+                      heart = {this.state.heart} >
+          </HeartRate>
+
+          <Temperature></Temperature>
+          {/* <Slider></Slider> */}
 
         </div>
-
-
       </div>
+
     );
   }
 }

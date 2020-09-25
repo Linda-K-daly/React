@@ -13,7 +13,11 @@ class HeartRate extends React.Component {
 
 
                 <p> {this.props.heart} BPM</p>
-                <Slider> {this.props.min} {this.props.max} {this.props.onChange} "value" = {this.props.heart}</Slider>
+                <Slider min = {this.props.min} 
+                        max = {this.props.max} 
+                        onChange = {this.props.onChange} 
+                        value = {this.props.heart}> 
+                </Slider>
                
               
                 
