@@ -25,27 +25,27 @@ class App extends Component {
   handleClick(activeTab) {
   this.setState({activeTab})
   }
-  // onClickTabAdd(val) {
-  //   this.setState({
-  //     add : val,
+
+  onClickTabAdd(val) {
+    this.setState({
+      add : val,
      
-  //   })
+    })
+  }
 
-  // }
-
-  // onClickTabList(val) {
-  //   this.setState({
-  //     list : val,
+  onClickTabList(val) {
+    this.setState({
+      list : val,
       
-  //   })
-  // }
+    })
+  }
 
-  // onClickTabPay(val) {
-  //   this.setState({
-  //     pay : val,
+  onClickTabPay(val) {
+    this.setState({
+      pay : val,
       
-  //   })
-  // }
+    })
+  }
 
 
   render() {
