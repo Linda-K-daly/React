@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Add from './Components/Add.js'
@@ -12,37 +12,39 @@ class App extends Component {
 
   constructor(props) {
     super();
-
+    this.onClickTabAdd = this.onClickTabAdd.bind(this);
+    this.onClickTabList = this.onClickTabList.bind(this);
+    this.onClickTabPay = this.onClickTabPay.bind(this);
     // this.onClickFn = this.onClickFn.bind(this)
     this.state = {
 
-      activeTab: "add",
+      activeTab: 'add',
       items: []
     };
 
     
   }
-  handleClick(activeTab) {
-  this.setState({activeTab})
-  }
+  // handleClick(activeTab) {
+  // this.setState({activeTab})
+  // }
 
-  onClickTabAdd(val) {
+  onClickTabAdd() {
     this.setState({
-      add : val,
+      activeTab: 'add',
      
     })
   }
 
-  onClickTabList(val) {
+  onClickTabList() {
     this.setState({
-      list : val,
+      activeTab: 'list',
       
     })
   }
 
-  onClickTabPay(val) {
+  onClickTabPay() {
     this.setState({
-      pay : val,
+      activeTab: 'pay'
       
     })
   }
@@ -50,17 +52,21 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      
 
-      <div className="App btn-group">
-            <Button onClick={this.handleClick.bind(this, 'add')}> Add </Button> 
-            <Button onClick={this.handleClick.bind(this, 'list')}> List </Button>
-            <Button onClick={this.handleClick.bind(this, 'pay')}> Pay </Button>  
-        </div>
+        <div className="App">
+        <Button isSelected={this.state.activeTab === 'add'} onClick={this.onClickTabAdd}>
+          Add
+        </Button>
+        <Button isSelected={this.state.activeTab === 'list'} onClick={this.onClickTabList}>
+          List
+        </Button>
+        <Button isSelected={this.state.activeTab === 'pay'} onClick={this.onClickTabPay}>
+          Pay
+        </Button>
 
-        {this.state.activeTab === 'add' &&  <Add /> }
-        {this.state.activeTab === 'list' &&  <List /> }
-        {this.state.activeTab === 'pay' &&  <Pay /> }
+        {this.renderContent()}
+        {/* {this.state.activeTab === 'add' ? <Add></Add>: (this.state.activeTab === 'list' ? <List></List> : <Pay></Pay>)} */}
       </div>
 
     );
