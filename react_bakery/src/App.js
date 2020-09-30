@@ -49,6 +49,18 @@ class App extends Component {
     })
   }
 
+  renderContent() {
+    switch(this.state.activeTab) {
+      case 'add':
+        return <Add></Add>;
+      case 'list':
+        return <List></List>;
+      case 'pay':
+        return <Pay></Pay>;
+      default:
+        return (<h1>Error</h1>)
+    }
+  }
 
   render() {
     return (

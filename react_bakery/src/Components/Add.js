@@ -20,28 +20,29 @@ class Add extends Component {
 
   updatePrice(val) {
     this.setState({
-      input : val,
+      price : val,
      
     })
   }
 
   submitForm(val) {
-    console.log(this.setState.updateInput() , this.setState.updatePrice())
-    }
+    let newForm = (this.state.input + ' '+this.state.price)
+    console.log(newForm)
+  }
   
   render() {
     return (
 
 
 
-      <div className="Add">
+      <div className="Add col-6">
 
         <h1>Add</h1>
         <form>
           <label>
             <input type="text" onChange={this.updateInput} />
           </label>
-          <input className = "btn btn-primary" type="submit" value="Add" />
+          <input onClick =  {this.props.submitForm} className = "btn btn-primary" type="submit" value="Add" />
         </form>
 
         <RCSlider min={1}
@@ -50,9 +51,7 @@ class Add extends Component {
          >
         </RCSlider>
 
-        <button onClick = {this.props.onClick} className = "btn btn-primary" >
-          {this.props.submitForm}
-        </button>
+        
       </div>
 
 

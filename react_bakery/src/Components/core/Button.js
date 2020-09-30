@@ -9,8 +9,10 @@ class Button extends Component {
         
   
         <div>
-        <button onClick = {this.props.onClick} className = "btn btn-primary" >
-          {this.props.children}
+        <button 
+        type = "button"
+        className = {this.props.isSelected ? "btn btn-primary active" : "btn btn-primary"} 
+          onClick = {this.props.onClick} >{this.props.children}
         </button>
         </div>
       );
