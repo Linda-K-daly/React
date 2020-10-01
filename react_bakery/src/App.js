@@ -15,6 +15,7 @@ class App extends Component {
     this.onClickTabAdd = this.onClickTabAdd.bind(this);
     this.onClickTabList = this.onClickTabList.bind(this);
     this.onClickTabPay = this.onClickTabPay.bind(this);
+    this.addItem = this.addItem.bind(this);
     // this.onClickFn = this.onClickFn.bind(this)
     this.state = {
 
@@ -29,6 +30,7 @@ class App extends Component {
   // }
 
   onClickTabAdd() {
+    // console.log('tab add click')
     this.setState({
       activeTab: 'add',
      
@@ -36,6 +38,7 @@ class App extends Component {
   }
 
   onClickTabList() {
+    // console.log('tab add click')
     this.setState({
       activeTab: 'list',
       
@@ -43,8 +46,17 @@ class App extends Component {
   }
 
   onClickTabPay() {
+    // console.log('tab add click')
     this.setState({
       activeTab: 'pay'
+      
+    })
+  }
+
+  addItem(itemName,price) {
+    this.setState({
+      itemName : itemName,
+      price : price
       
     })
   }
@@ -52,7 +64,7 @@ class App extends Component {
   renderContent() {
     switch(this.state.activeTab) {
       case 'add':
-        return <Add></Add>;
+        return <Add onTypeFn = {() => this.addItem(itemName, price)}/>;
       case 'list':
         return <List></List>;
       case 'pay':

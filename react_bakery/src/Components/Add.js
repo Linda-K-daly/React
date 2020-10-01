@@ -5,30 +5,48 @@ import 'rc-slider/assets/index.css';
 
 class Add extends Component {
 
+  constructor (props){
+  super();
 
-  state = {
-    input: "",
+  this.updateItemName = this.updateItemName.bind(this);
+  this.updatePrice = this.updatePrice.bind(this);
+  this.submitForm = this.submitForm.bind(this);
+
+  this.state = {
+    itemName: "",
     price: 1
   }
+}
+ 
 
-  updateInput(val) {
+  updateItemName(event) {
     this.setState({
-      input : val,
+      ItemName : event.target.value
      
     })
   }
 
-  updatePrice(val) {
+  updatePrice(value) {
     this.setState({
-      price : val,
+      price : value,
      
     })
   }
 
-  submitForm(val) {
-    let newForm = (this.state.input + ' '+this.state.price)
-    console.log(newForm)
+  // handleChange(event) {
+  //   this.setState ({value: event.target.value});
+  // }
+
+
+  submitForm(event) {
+    // console.log(this.state)
+    onType : {this.props.onTypeFn}
+    // let newForm = (this.state.input + ' '+ this.state.price);
+    event.preventDefault()
+  
   }
+
+  // componentDidMount()
   
   render() {
     return (
@@ -38,17 +56,18 @@ class Add extends Component {
       <div className="Add col-6">
 
         <h1>Add</h1>
-        <form>
+        <form onClick={this.submitForm}>
           <label>
-            <input type="text" onChange={this.updateInput} />
+            <input type="text" name = 'Add' onChange={this.updateItemName} input = {this.state.input} />
           </label>
-          <input onClick =  {this.props.submitForm} className = "btn btn-primary" type="submit" value="Add" />
+          <input className = "btn btn-primary" onClick =  {this.submitForm}  type="submit" value="Add" />
         </form>
 
         <RCSlider min={1}
           max ={10}
-          onChange={this.props.updatePrice}
-         >
+          onChange={this.updatePrice}
+          price = {this.state.price}
+         >{this.state.price + '€'}
         </RCSlider>
 
         
