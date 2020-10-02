@@ -23,7 +23,7 @@ class App extends Component {
       items: []
     };
 
-    
+
   }
   // handleClick(activeTab) {
   // this.setState({activeTab})
@@ -33,7 +33,7 @@ class App extends Component {
     // console.log('tab add click')
     this.setState({
       activeTab: 'add',
-     
+
     })
   }
 
@@ -41,7 +41,7 @@ class App extends Component {
     // console.log('tab add click')
     this.setState({
       activeTab: 'list',
-      
+
     })
   }
 
@@ -49,24 +49,32 @@ class App extends Component {
     // console.log('tab add click')
     this.setState({
       activeTab: 'pay'
-      
+
     })
   }
 
-  addItem(itemName,price) {
+  addItem(itemName, price) {
+    //  je copie mon state items dans une variable
+    let itemList = this.state.items 
+    // je fabrique un objet qui récupère les données des paramètres
+    let newProduct = {
+          itemName: itemName,
+          price: price, 
+    }
+    // je rajoute le nouvel objet à la liste
+    itemList.push(newProduct)
+    //  j'update le state avec la nouvelle liste
     this.setState({
-      itemName : itemName,
-      price : price
-      
+      items: itemList,
     })
   }
 
   renderContent() {
-    switch(this.state.activeTab) {
+    switch (this.state.activeTab) {
       case 'add':
-        return <Add onTypeFn = {() => this.addItem(itemName, price)}/>;
+        return <Add addItem={this.addItem} />;
       case 'list':
-        return <List></List>;
+        return <List>{this.state.itemList}</List>;
       case 'pay':
         return <Pay></Pay>;
       default:
@@ -76,9 +84,9 @@ class App extends Component {
 
   render() {
     return (
-      
 
-        <div className="App">
+
+      <div className="App">
         <Button isSelected={this.state.activeTab === 'add'} onClick={this.onClickTabAdd}>
           Add
         </Button>
