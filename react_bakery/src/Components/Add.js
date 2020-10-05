@@ -39,7 +39,7 @@ class Add extends Component {
 
   submitForm(event) {
     // console.log(this.state)
-    this.props.addItem(this.state.itemName, this.state.price)
+    this.props.addItemFn(this.state.itemName, this.state.price)
     // let newForm = (this.state.input + ' '+ this.state.price);
     event.preventDefault()
 

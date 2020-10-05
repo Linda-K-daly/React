@@ -55,11 +55,11 @@ class App extends Component {
 
   addItem(itemName, price) {
     //  je copie mon state items dans une variable
-    let itemList = this.state.items 
+    let itemList = this.state.items
     // je fabrique un objet qui récupère les données des paramètres
     let newProduct = {
-          itemName: itemName,
-          price: price, 
+      itemName: itemName,
+      price: price,
     }
     // je rajoute le nouvel objet à la liste
     itemList.push(newProduct)
@@ -68,15 +68,28 @@ class App extends Component {
       items: itemList,
     })
   }
+  // ***************************************
+  // autre solution
+  // addItem(itemName, price) {
+  //   let itemList = this.state.items;
+  //   itemList.push({
+  //     itemName,
+  //     price
+  //   })
+  //   this.setState({
+  //     items: itemList
+  //   })
+  // }
+  // ****************************************
 
   renderContent() {
     switch (this.state.activeTab) {
       case 'add':
-        return <Add addItem={this.addItem} />;
+        return <Add addItemFn={this.addItem} />;
       case 'list':
-        return <List>{this.state.itemList}</List>;
+        return <List items={this.state.items}></List>;
       case 'pay':
-        return <Pay></Pay>;
+        return <Pay items={this.state.items} ></Pay>;
       default:
         return (<h1>Error</h1>)
     }

@@ -1,33 +1,35 @@
 import React, { Component } from 'react';
+import Add from './Add';
 
 class List extends Component {
 
 
+
+
+
   render() {
+    console.log('hello les props', this.props)
     return (
 
 
 
-      <div className="List">
-
+      <div className="List" onClick={this.props.onClick}>
         <h1>List</h1>
-        <ul class="list-group">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-             {this.props.itemList}
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Dapibus ac facilisis in
-    <span class="badge badge-primary badge-pill">2</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-    <span class="badge badge-primary badge-pill">1</span>
-          </li>
+        <ul className="list-group">
+          {this.props.items.map((elem, index) => {
+            return <li className="list-group-item d-flex justify-content-between align-items-center" key={index}>
+              {elem.itemName}  {elem.price}
+            </li>
+          }
+          )}
         </ul>
-
       </div>
     );
   }
 }
 
 export default List;
+
+
+//   {/* autre syntaxe
+// {this.props.items.map((elem, index) => <li key = {index}> {elem.itemName} {elem.price} </li> } */}
