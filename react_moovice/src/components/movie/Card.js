@@ -1,10 +1,22 @@
 import React from 'react';
 
 class Cards extends React.Component {
+
+  constructor(){
+    super();
+
+    this.state ={
+
+    }
+  }
     
   render() {
     return (
-      <div>Cards</div>
+      <div  className="Card">Cards
+        <img className= "card-img-top" src= {'https://image.tmdb.org/t/p/w300/'} alt=""/>
+      
+      
+      </div>
     );
   }
 }

@@ -4,10 +4,6 @@ import Button from './components/Button.js'
 
 
 
-
-
-
-
 class App extends Component {
 
   constructor(){

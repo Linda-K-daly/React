@@ -23,18 +23,18 @@ class App extends Component {
 
   decrementCount() {
     this.setState({
-      count: Math.max(this.state.count - 1,0)
+      count: Math.max(this.state.count - 1, 0)
     })
   }
 
   render() {
     return (
-      <div className="App" style={{textAlign: "center"}}> 
+      <div className="App" style={{ textAlign: "center" }}>
         <h1>Counter</h1>
         <h2>{this.state.count}</h2>
-        <button onClick={this.incrementCount} style = {{backgroundColor:"green"}}>+</button>
-        <button onClick={this.decrementCount} style = {{backgroundColor:"red"}}>-</button>
-        <Counter  count={this.state.count} incrementFn = {this.incrementCount} decrementCount = {this.decrementCount}></Counter>
+        <button onClick={this.incrementCount} style={{ backgroundColor: "green" }}>+</button>
+        <button onClick={this.decrementCount} style={{ backgroundColor: "red" }}>-</button>
+        <Counter count={this.state.count} incrementFn={this.incrementCount} decrementCount={this.decrementCount}></Counter>
       </div>
     );
   }
