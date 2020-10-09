@@ -14,7 +14,11 @@ import Popular from './components/Popular.js';
 import PopularBattle from './components/PopularBattle.js';
 
 
+
 class App extends Component {
+
+
+
 
   render() {
     return (
