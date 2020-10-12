@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './movie/Card.js';
-import PopularBattle from './PopularBattle.js';
+
 
 class Popular extends React.Component {
 
@@ -28,14 +28,15 @@ class Popular extends React.Component {
 
     renderCards() {
         return this.state.movies.map((elem, i) => {
-        // console.log('je suis index du film', i)
-        // console.log('je suis un element', elem)
+            // console.log('je suis index du film', i)
+            // console.log('je suis un element', elem)
             return (
                 <Card
                     key={i}
                     moviePix={elem.poster_path}
                     movieTitle={elem.title}
                     movieSynopsis={elem.overview}
+                    
                 >
                 </Card>
             )
@@ -46,24 +47,17 @@ class Popular extends React.Component {
         // console.log('hello render', this.state)
         // console.log('hello les movies', this.state.movies)
         return (
-            <div>
+            <div className="row col-6">
                 Popular
-            {this.renderCards()}
-            <PopularBattle 
-                    key={this.state.i}
-                    moviePix={this.state.poster_path}
-                    movieTitle={this.state.title}
-                    movieSynopsis={this.state.overview}
-                    >
+                {this.renderCards()}
 
-                    </PopularBattle>
             </div>
-          
+
 
 
         );
 
-        
+
     }
 
 }
