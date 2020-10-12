@@ -4,11 +4,20 @@ import React, { Component } from 'react';
 
 class Button extends Component {
 
- render() {
-    console.log(this.props.children)
-    return (
+    constructor() {
+        super();
+        this.onClik = this.onClick.bind(this)
+    }
 
-            <button>{this.props.children}</button>
+    onClick() {
+        this.props.onClick()
+    }
+
+    render() {
+        console.log(this.props.children)
+        return (
+
+                <button>send</button>
             
 
     )
@@ -17,4 +26,4 @@ class Button extends Component {
  
 
   }
-export default Button;
+    export default Button;

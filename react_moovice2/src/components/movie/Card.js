@@ -26,7 +26,6 @@ class Cards extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{this.props.movieTitle}</h5>
             <p className="card-text">{this.props.movieSynopsis}</p>
-            <p className="card-text">{this.props.id}</p>
           </div>
         </div>
       </div>

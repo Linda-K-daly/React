@@ -13,6 +13,7 @@ class PopularBattle extends React.Component {
             currentPage: 1,
             movies: [],
             // firstMovie:{}
+            id: 1
         }
         
     };
@@ -50,7 +51,23 @@ class PopularBattle extends React.Component {
     // }
 
     choseFilm (id){
-        // console.log('chosefilm ok', id); debug ne fonctionne pas 
+        console.log('chosefilm ok', id)
+        // let myList = []
+
+        // if(JSON.parse(localStorage.getItem('my-list'))) {
+        //     // console.log('Hello localstorage') apparaît au 2ème clik car au 1er c'est un array vide . au 2è click on pousse la liste dans l'array
+        //     myList = JSON.parse(localStorage.getItem('my-list'))
+        // }
+
+        let myList = JSON.parse(localStorage.getItem('my-list')) || [] 
+
+        if (!myList.includes(id)) {
+            myList.push(id)
+            localStorage.setItem('my-list', JSON.stringify(myList))
+        }
+
+        // console.log('myList', myList)
+
         this.setState({
             currentPage: this.state.currentPage + 1
         })
@@ -78,23 +95,25 @@ class PopularBattle extends React.Component {
             return <div>Movie on loading</div>
         }
 
-        // console.log('j/affiche lefirstMovie', firstMovie)
+        console.log('j/affiche lefirstMovie', firstMovie)
 
         return (
             <div>
                 {/* {{this.renderCards()}} */}
-                <button onClick= {this.choseFilm}>
+                <button onClick= {() => this.choseFilm(firstMovie.id)}>
                     <Card
                         movieTitle={firstMovie.title}
                         movieSynospsis={firstMovie.overview}
                         moviePix={firstMovie.poster_path}
+                        movieId= {firstMovie.id}
                     />
                 </button>
-                <button onClick= {this.choseFilm}>
+                <button onClick= {() => this.choseFilm(secondMovie.id)}>
                     <Card
                         movieTitle={secondMovie.title}
                         movieSynospsis={secondMovie.overview}
                         moviePix={secondMovie.poster_path}
+                        movieId= {secondMovie.id}
                     />
                 </button>
 
