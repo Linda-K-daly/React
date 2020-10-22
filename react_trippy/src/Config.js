@@ -1,7 +1,1 @@
-const Config = {
-
-    host : 'http://localhost:3002'
-
-}
-
-export {Config}
+export const Config ={host:'http://localhost:3002' }

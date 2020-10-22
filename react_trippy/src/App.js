@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import HomeContainer from './containers/HomeContainer'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import HomeContainer from './containers/HomeContainer';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
 
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -22,7 +18,6 @@ class App extends Component {
           </Switch>
         </div>
       </Router>
-
     );
   }
 }

@@ -1,30 +1,44 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React from "react";
+import Home from "../components/core/Home";
+import Api from "../utils/Api";
+import Card from "../components/city/Card"
+
+// import Global from '../Global'
+// import Config from '../Config'
+
+class HomeContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      cities: [],
+    };
+  }
+
+  componentDidMount() {
+
+    Api.getHome().then(result =>
+      this.setState({
+        cities: result,
+      })
+      )
+      console.log("bonsoir paaaaarrrrrrriiiiiiiis" , this.state.cities);
+  }
 
 
-class HomeContainer extends Component {
+
   render() {
+    console.log("je suis dans le render HC", this.state.cities);
+
     return (
-      <div 
-        className="container-fluid"
-        style={{
-          fontFamily: 'Montserrrat'
-        }}>
-        <div
-            className= 'row'>
-            <div  
-              className= 'col-lg-8 col-md-4 col-12'>
-              <p>
-                Je vérifie que les 2 mots : Voleur et <span style={{fontFamily: 'serif'}}>Voleur</span> ont une police d'écriture différente
-              </p>
-            </div>
-            <div
-              className= 'col-lg-8 col-md-4 col-12'>
-              Une autre phrase
-            </div>
-          </div>
-        </div>
-            
+      <div>
+        <Home>{this.state.cities}</Home>
+        hello ici
+        <Card
+        name= {this.state.cities.name}
+        slug={this.state.cities.slug}
+        source= {this.state.cities.source}
+          />
+      </div>
     );
   }
 }

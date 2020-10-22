@@ -1,46 +1,23 @@
-import React, { Component } from 'react';
-import '../App.css';
+import { Config } from "../../src/Config";
 
+class Api {
+  getHome() {
+    return fetch(`${Config.host}/api/home`)
+      .then((res) => res.json())
+      .then((json) => json);
 
-class Api  {
-
-
-getHome(){
-fetch(`http://localhost:3002${api/home}`)
-.then(res => res.json())
-.then(json => {
-    // console.log('hello fetchBattle', json.results)
-    this.setState({
-      ,
-    })
-});
-}.
-
-
-
-  render() {
-    return (
-      <div 
-        className="Api">
-       
-        </div>
-            
-    );
+    {
+      //     const myCities = json.cities.map((elem)=>{
+      //       return {
+      //         name: elem.name,
+      //         slug: elem.slug,
+      //         source: elem.source,
+      //       }
+      //     })
+      // // console.log('je suis json constCity', json.cities[1].name);
+      // console.log('je suis json', myCities);
+      // console.log('le typeof de json', typeof json.cities);
+    }
   }
 }
-
 export default new Api();
-
-
-
-// request().then((data) => {
-//     console.log(data)
-// }).catch(err => {
-//     console.log(err)
-// })
-
-// fetch(url, request)
-//   .then(res => res.json())
-//   .then(json => {
-//     // code
-//   });
