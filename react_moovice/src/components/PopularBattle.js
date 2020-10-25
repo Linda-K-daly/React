@@ -30,26 +30,11 @@ import MyList from './MyList.js';
                                     movies: json.results,
                                 })
                             });
-                    }
+                    }JSON
 
 
 
-                    // renderCards() {
-                    //     return this.state.movies.map((elem, i) => {
-                    //     console.log('je suis index du battle', i)
-                    //     console.log('je suis un element du battle', elem)
-                    //         return (
-                    //             <Card
-                    //                 key={i}
-                    //                 moviePix={elem.poster_path}
-                    //                 movieTitle={elem.title}
-                    //                 movieSynopsis={elem.overview}
-                    //             >
-                    //             </Card>
-                    //         )
-                    //     })
-
-                    // }
+                    
 
                     choseFilm (id){
                         console.log('chosefilm ok', id)
@@ -61,7 +46,8 @@ import MyList from './MyList.js';
                         // }
 
                         let myList = JSON.parse(localStorage.getItem('my-list')) || [] 
-
+                        
+                        // Evite les doublons de films enregistrés
                         if (!myList.includes(id)) {
                             myList.push(id)
                             localStorage.setItem('my-list', JSON.stringify(myList))
@@ -103,18 +89,18 @@ import MyList from './MyList.js';
                                 {/* {{this.renderCards()}} */}
                                 <button onClick= {() => this.choseFilm(firstMovie.id)}>
                                     <Card
-                                        movieTitle={firstMovie.title}
-                                        movieSynospsis={firstMovie.overview}
-                                        moviePix={firstMovie.poster_path}
-                                        movieId= {firstMovie.id}
+                                        title={firstMovie.title}
+                                        description={firstMovie.overview}
+                                        imgUrl={firstMovie.poster_path}
+                                        id= {firstMovie.id}
                                     />
                                 </button>
                                 <button onClick= {() => this.choseFilm(secondMovie.id)}>
                                     <Card
-                                        movieTitle={secondMovie.title}
-                                        movieSynospsis={secondMovie.overview}
-                                        moviePix={secondMovie.poster_path}
-                                        movieId= {secondMovie.id}
+                                        title={secondMovie.title}
+                                        description={secondMovie.overview}
+                                        imgUrl={secondMovie.poster_path}
+                                        id= {secondMovie.id}
                                     />
                                 </button>
                                     <MyList choseFilm={() => this.choseFilm()}/>

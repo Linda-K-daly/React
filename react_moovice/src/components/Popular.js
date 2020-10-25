@@ -33,10 +33,10 @@ class Popular extends React.Component {
             return (
                 <Card
                     key={i}
-                    moviePix={elem.poster_path}
-                    movieTitle={elem.title}
-                    movieSynopsis={elem.overview}
-                    movieId= {elem.id}
+                    imgUrl={elem.poster_path}
+                    title={elem.title}
+                    descripton={elem.overview}
+                    id= {elem.id}
                 >
                 </Card>
             )
