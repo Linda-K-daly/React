@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './movie/Card.js';
-
+import PopularBattle from './PopularBattle.js';
 
 class Popular extends React.Component {
 
@@ -17,7 +17,7 @@ class Popular extends React.Component {
         fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=134d92c3d72c8501356da2496ace8c7e')
             .then(res => res.json())
             .then(json => {
-                // console.log('hello fetch', json.results)
+                console.log('hello fetch', json.results)
                 this.setState({
                     movies: json.results,
                 })
@@ -28,15 +28,14 @@ class Popular extends React.Component {
 
     renderCards() {
         return this.state.movies.map((elem, i) => {
-            // console.log('je suis index du film', i)
-            // console.log('je suis un element', elem)
+        // console.log('je suis index du film', i)
+        // console.log('je suis un element', elem)
             return (
                 <Card
                     key={i}
-                    imgUrl={elem.poster_path}
-                    title={elem.title}
-                    descripton={elem.overview}
-                    id= {elem.id}
+                    moviePix={elem.poster_path}
+                    movieTitle={elem.title}
+                    movieSynopsis={elem.overview}
                 >
                 </Card>
             )
@@ -47,17 +46,17 @@ class Popular extends React.Component {
         // console.log('hello render', this.state)
         // console.log('hello les movies', this.state.movies)
         return (
-            <div className="row col-6">
+            <div>
                 Popular
-                {this.renderCards()}
-
+            {this.renderCards()}
+           
             </div>
-
+          
 
 
         );
 
-
+        
     }
 
 }

@@ -25,7 +25,13 @@ class Pay extends Component {
   }
     onClickProduct(name, price) {
       console.log('on clique!', name, price)
-      
+
+    }
+
+
+    // pour chaque 
+    renderTax() {
+      return this.
     }
 
     renderCards() {

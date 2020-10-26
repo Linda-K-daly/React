@@ -23,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="container ">
+        <div>
           <nav>
             <ul>
               <li><Link to="/">This week</Link></li>
@@ -36,19 +36,19 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/">
-              <Discover />
+              <Discover/>
             </Route>
             <Route exact path="/battle/">
-              <DiscoverBattle />
+            <DiscoverBattle/>
             </Route>
             <Route exact path="/popular/">
-              <Popular />
+              <Popular/>
             </Route>
             <Route exact path="/popular-battle/">
-              <PopularBattle />
+              <PopularBattle/>
             </Route>
             <Route exact path="/my-list/">
-              <MyList />
+              <MyList/>
             </Route>
           </Switch>
         </div>
